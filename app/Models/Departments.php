@@ -11,5 +11,14 @@ class Departments extends Model
     protected $primaryKey = 'code';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['code', 'name'];
+    protected $fillable = ['code', 'name', 'country', 'city_zip'];
+
+    public function city()
+    {
+        return $this->belongsTo(Cities::class, 'city_zip', 'zip_code');
+    }
+    public function country()
+    {
+        return $this->belongsTo(Countries::class, 'country', 'name');
+    }
 }

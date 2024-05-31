@@ -66,7 +66,7 @@ class EmployeesResource extends Resource
                         Forms\Components\Textarea::make('notes')
                             ->label(__('fields.notes'))
                             ->nullable()
-                            ->maxLength(65535), // Default max length for text fields
+                            ->maxLength(600),
                     ]),
             ]);
     }

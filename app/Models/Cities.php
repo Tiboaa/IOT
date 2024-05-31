@@ -10,5 +10,10 @@ class Cities extends Model
     use HasFactory;
     protected $primaryKey = 'zip_code';
     public $incrementing = false;
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'zip_code', 'country_id'];
+    
+    public function country()
+    {
+        return $this->belongsTo(Countries::class, 'country_id');
+    }
 }
