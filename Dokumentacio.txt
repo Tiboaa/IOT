@@ -1,1 +1,56 @@
+___________
+-DASHBOARD-
+___________
+
+A cégnél dolgozó összes embert számláló widget.
+
+
+________________
+-Administration-
+________________
+Navigációs menü amiben     /cities
+                           /countries
+                           /departments
+                           /employees
+-ra lehet tovább haladni
+
+
+___________
+-Countries-
+___________
+Azok az országok ahol van a cégnek épülete.
+Az id automatikus generált 
+és minden országnév egyedi.
+
+
+________
+-Cities-
+________
+Azok a városok amiben van a cégnek épülete.
+Már meglévő országokhoz lehet csak várost hozzá adni.
+Több város is lehetne egy országba, mivel a ZIP-szám/irányító szám különbözteti meg őket (az elsődleges kulcs).
+Ez a projektben nem lehetséges, ugyan is minden város neve egyedinek van beállítva, az egyszerűség kedvéért.
+De ez nem probléma a projekt szempontjából, mert kevés ilyen város létezik (kivéve Albuquerque).
+
+_____________
+-Departments-
+_____________
+A cég épületei(részlegei), egy városban több részleg is lehet, amik foglalkozhaznak akár ugyan azzal is,
+mivel egy négy jegyű kód(az elsődleges kulcs) kölönbözteti meg őket.
+
+
+___________
+-Employees-
+___________
+A cég alkalmazottai, egy ember csak egy részlegen dolgozhat.
+A dolgozókat egy id különbözteti meg. Azon kívül lehetne az egyedi igazolvány számukat is elsődleges kulcsként használni.
+Ennek ellenére az auto generált id mégis az elsődleges kulcs mivel az egységes nem mint az igazolvány szám,
+ami (a projektben van mivel nem nullának van beállítva) nem feltétlenül van mindenkinek (pl.: USA)
+
+
+___________________
+-Adatok Generálása-
+___________________
+database\migrations\seeds\
+Az itt található php migration file-ok töltik fel az üres adatbázis tábláít sudo-random adatokkal.
 
